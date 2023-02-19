@@ -1,18 +1,22 @@
+using Game.Core.Factory;
 using UnityEngine;
 
 namespace Game.Global
 {
-    public class Road : MonoBehaviour
+    [CreateAssetMenu(fileName = "Road" , menuName = "ScriptableObject/Road")]
+    public class Road : ScriptableObject
     {
-        void Start()
-        {
+        [SerializeField] private int _lenght;
+        public int Lenght => _lenght;
 
-        }
+        [SerializeField] private RoadDifficulty _difficulty;
+        public RoadDifficulty Difficulty => _difficulty;
 
-        void Update()
-        {
+        [SerializeField] private Vector3 _startSpawnPoint;
+        public Vector3 StartSpawnPoint => _startSpawnPoint;
 
-        }
+        [SerializeField] private int _prefabLenghtAtZ;
+        public int PrefabLenghtAtZ => _prefabLenghtAtZ;
     }
 }
 
